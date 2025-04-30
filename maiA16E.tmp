@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://hu5n2x3adux5"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_aojx8"]
+[ext_resource type="Texture2D" uid="uid://d2mwv5vp0b0wa" path="res://patricia-Sheet.png" id="2_d5mps"]
+[ext_resource type="Script" path="res://patricia.gd" id="3_wyjfx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edghy"]
+atlas = ExtResource("2_d5mps")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77hkv"]
+atlas = ExtResource("2_d5mps")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu1ir"]
+atlas = ExtResource("2_d5mps")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnd4k"]
+atlas = ExtResource("2_d5mps")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jalk8"]
+atlas = ExtResource("2_d5mps")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61nte"]
+atlas = ExtResource("2_d5mps")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18kqh"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edghy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77hkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu1ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnd4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jalk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61nte")
+}],
+"loop": true,
+"name": &"drive",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D"]
+position = Vector2(62, 63)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_aojx8")
+
+[node name="Patricia" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_18kqh")
+animation = &"drive"
+script = ExtResource("3_wyjfx")

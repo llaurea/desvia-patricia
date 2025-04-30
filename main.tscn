@@ -1,0 +1,205 @@
+[gd_scene load_steps=27 format=3 uid="uid://hu5n2x3adux5"]
+
+[ext_resource type="Script" path="res://script/background.gd" id="1_1yl16"]
+[ext_resource type="Script" path="res://script/main.gd" id="1_onry3"]
+[ext_resource type="Texture2D" uid="uid://bi3m6h3wkhqym" path="res://arte/fundo.png" id="2_66q8h"]
+[ext_resource type="Script" path="res://script/character_body_2d.gd" id="3_bbr5x"]
+[ext_resource type="Texture2D" uid="uid://d2mwv5vp0b0wa" path="res://arte/patricia-Sheet.png" id="4_j78tp"]
+[ext_resource type="PackedScene" uid="uid://c6r3d0lc2lua2" path="res://inimigosazul.tscn" id="6_2586e"]
+[ext_resource type="PackedScene" uid="uid://dno1xe1afrq67" path="res://ana.tscn" id="6_h8t4q"]
+[ext_resource type="PackedScene" uid="uid://gb4myebhsbvi" path="res://inimigospreto.tscn" id="7_fi3s3"]
+[ext_resource type="PackedScene" uid="uid://bbsu33df4vbe0" path="res://laura.tscn" id="7_vf4pl"]
+[ext_resource type="PackedScene" uid="uid://jr0s24k83dpr" path="res://inimigoscinza.tscn" id="8_k57x8"]
+[ext_resource type="PackedScene" uid="uid://cabcqpb46h6ta" path="res://felipe.tscn" id="8_p43ob"]
+[ext_resource type="PackedScene" uid="uid://cklbanopq2we2" path="res://inimigosvermelho.tscn" id="9_rkd0c"]
+[ext_resource type="Texture2D" uid="uid://dpqcgemlqimly" path="res://arte/botao1.png" id="10_orrvd"]
+[ext_resource type="Texture2D" uid="uid://ddkll7pgsm50d" path="res://arte/botao2.png" id="11_dkvo3"]
+[ext_resource type="Texture2D" uid="uid://cpdcdu7lm5nea" path="res://arte/2.png" id="11_s1kou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eg4y3"]
+size = Vector2(145, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vp4ix"]
+size = Vector2(1, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edghy"]
+atlas = ExtResource("4_j78tp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77hkv"]
+atlas = ExtResource("4_j78tp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu1ir"]
+atlas = ExtResource("4_j78tp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnd4k"]
+atlas = ExtResource("4_j78tp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jalk8"]
+atlas = ExtResource("4_j78tp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61nte"]
+atlas = ExtResource("4_j78tp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18kqh"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edghy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77hkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu1ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnd4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jalk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61nte")
+}],
+"loop": true,
+"name": &"drive",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogcac"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btaei"]
+size = Vector2(19, 11)
+
+[node name="Main" type="Node2D"]
+position = Vector2(53, 55)
+script = ExtResource("1_onry3")
+enemy1 = ExtResource("6_2586e")
+enemy2 = ExtResource("8_k57x8")
+enemy3 = ExtResource("7_fi3s3")
+enemy4 = ExtResource("9_rkd0c")
+ana = ExtResource("6_h8t4q")
+laura = ExtResource("7_vf4pl")
+felipe = ExtResource("8_p43ob")
+
+[node name="background" type="Node2D" parent="."]
+script = ExtResource("1_1yl16")
+
+[node name="bg1" type="Sprite2D" parent="background"]
+position = Vector2(197, 41)
+scale = Vector2(1, 1.04688)
+texture = ExtResource("2_66q8h")
+
+[node name="bg2" type="Sprite2D" parent="background"]
+position = Vector2(709, 41)
+scale = Vector2(1, 1.04688)
+texture = ExtResource("2_66q8h")
+
+[node name="ceu1" type="Sprite2D" parent="background"]
+position = Vector2(203, -24)
+texture = ExtResource("11_s1kou")
+
+[node name="ceu2" type="Sprite2D" parent="background"]
+position = Vector2(715, -24)
+texture = ExtResource("11_s1kou")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/StaticBody2D4"]
+position = Vector2(4, 72)
+shape = SubResource("RectangleShape2D_eg4y3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/StaticBody2D"]
+position = Vector2(-75.5, 2)
+shape = SubResource("RectangleShape2D_vp4ix")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/StaticBody2D3"]
+position = Vector2(76, 2)
+shape = SubResource("RectangleShape2D_vp4ix")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/StaticBody2D2"]
+position = Vector2(7, 3)
+shape = SubResource("RectangleShape2D_eg4y3")
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(-29, 32)
+script = ExtResource("3_bbr5x")
+
+[node name="Patricia" type="AnimatedSprite2D" parent="player"]
+sprite_frames = SubResource("SpriteFrames_18kqh")
+animation = &"drive"
+autoplay = "drive"
+speed_scale = 1.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+shape = SubResource("RectangleShape2D_ogcac")
+
+[node name="Area2D" type="Area2D" parent="player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2D"]
+shape = SubResource("RectangleShape2D_btaei")
+
+[node name="spawn1" type="Node2D" parent="."]
+position = Vector2(82, 13)
+
+[node name="spawn2" type="Node2D" parent="."]
+position = Vector2(82, 33)
+
+[node name="spawn3" type="Node2D" parent="."]
+position = Vector2(82, 58)
+
+[node name="spawn amigos" type="Node2D" parent="."]
+position = Vector2(107, 2)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -45.0
+offset_top = -57.0
+offset_right = -5.0
+offset_bottom = -17.0
+
+[node name="restart" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 5.0
+offset_right = 89.0
+offset_bottom = 28.0
+icon = ExtResource("10_orrvd")
+flat = true
+icon_alignment = 1
+
+[node name="quit" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 28.0
+offset_right = 89.0
+offset_bottom = 51.0
+icon = ExtResource("11_dkvo3")
+flat = true
+icon_alignment = 1
+
+[node name="NodeEnemies" type="Node2D" parent="."]
+
+[connection signal="area_shape_entered" from="player/Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_entered" from="player/Area2D" to="player" method="_on_area_2d_area_shape_entered"]
+[connection signal="pressed" from="Control/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Control/quit" to="." method="_on_quit_pressed"]

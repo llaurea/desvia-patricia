@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://jr0s24k83dpr"]
+
+[ext_resource type="Script" path="res://script/inimigos.gd" id="1_rajny"]
+[ext_resource type="Texture2D" uid="uid://bqnl0e4vgi7av" path="res://arte/carrocinza-Sheet.png" id="1_rrxwn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4j5p"]
+atlas = ExtResource("1_rrxwn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf6do"]
+atlas = ExtResource("1_rrxwn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4dyrg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4j5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf6do")
+}],
+"loop": true,
+"name": &"cinza",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqums"]
+size = Vector2(16, 12.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljtby"]
+size = Vector2(17.5, 14)
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_rajny")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4dyrg")
+animation = &"cinza"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_jqums")
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.25, -1)
+shape = SubResource("RectangleShape2D_ljtby")

@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://cabcqpb46h6ta"]
+
+[ext_resource type="Texture2D" uid="uid://s6lfnv2a8p2b" path="res://arte/felipe-Sheet.png" id="1_vxktf"]
+[ext_resource type="Script" path="res://script/amigo.gd" id="1_w4oos"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bci81"]
+atlas = ExtResource("1_vxktf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdw5e"]
+atlas = ExtResource("1_vxktf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3tb8"]
+atlas = ExtResource("1_vxktf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hrsu"]
+atlas = ExtResource("1_vxktf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwtwu"]
+atlas = ExtResource("1_vxktf")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dokw2"]
+atlas = ExtResource("1_vxktf")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4rlm"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bci81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdw5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3tb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hrsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwtwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dokw2")
+}],
+"loop": true,
+"name": &"felipe",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5v7q"]
+size = Vector2(6, 12.5313)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_w4oos")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_g4rlm")
+animation = &"felipe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f5v7q")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]

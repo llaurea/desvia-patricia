@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://gb4myebhsbvi"]
+
+[ext_resource type="Script" path="res://script/inimigos.gd" id="1_hsf5q"]
+[ext_resource type="Texture2D" uid="uid://ddcgnq0t6sjda" path="res://arte/carropreto-Sheet.png" id="1_w568x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivhlx"]
+atlas = ExtResource("1_w568x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqych"]
+atlas = ExtResource("1_w568x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sl3yj"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivhlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqych")
+}],
+"loop": true,
+"name": &"preto",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pex7x"]
+size = Vector2(16, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4ny2"]
+size = Vector2(17, 14)
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_hsf5q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sl3yj")
+animation = &"preto"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_pex7x")
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_u4ny2")
