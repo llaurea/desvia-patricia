@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s6lfnv2a8p2b"
-path="res://.godot/imported/felipe-Sheet.png-9f4c6c665fac2c909022b50639b6e570.ctex"
+uid="uid://b174601be0l1j"
+path="res://.godot/imported/felipeicon.png-516507ef3cd1c9afadd9118918cab17d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arte/felipe-Sheet.png"
-dest_files=["res://.godot/imported/felipe-Sheet.png-9f4c6c665fac2c909022b50639b6e570.ctex"]
+source_file="res://arte/felipeicon.png"
+dest_files=["res://.godot/imported/felipeicon.png-516507ef3cd1c9afadd9118918cab17d.ctex"]
 
 [params]
 

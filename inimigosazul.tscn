@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c6r3d0lc2lua2"]
 
 [ext_resource type="Texture2D" uid="uid://fipognadrdgv" path="res://arte/carro4-Sheet.png" id="1_7jbhi"]
-[ext_resource type="Script" path="res://script/inimigos.gd" id="1_t6hwg"]
+[ext_resource type="Script" uid="uid://bljrw7jw15ydq" path="res://script/inimigos.gd" id="1_t6hwg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_propg"]
 atlas = ExtResource("1_7jbhi")

@@ -47,12 +47,15 @@ func spawn_enemy():
 		new_enemy.add_to_group("enemies")
 		add_child(new_enemy)
 
-func _on_restart_pressed() -> void:
+func _on_restart_pressed():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://main.tscn")
 
-func _on_quit_pressed() -> void:
+func _on_quit_pressed():
 	get_tree().quit()
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	if area.is_in_group("enemies"):
+		get_tree().paused = true
 		tela_morte.visible = true
+		

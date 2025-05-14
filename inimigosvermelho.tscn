@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cklbanopq2we2"]
 
-[ext_resource type="Script" path="res://script/inimigos.gd" id="1_6ps4a"]
+[ext_resource type="Script" uid="uid://bljrw7jw15ydq" path="res://script/inimigos.gd" id="1_6ps4a"]
 [ext_resource type="Texture2D" uid="uid://ca1nukdnqejc2" path="res://arte/carrovermelho-Sheet.png" id="1_j2uub"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r65sh"]

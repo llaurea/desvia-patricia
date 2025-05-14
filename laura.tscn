@@ -1,60 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbsu33df4vbe0"]
+[gd_scene load_steps=7 format=3 uid="uid://bbsu33df4vbe0"]
 
-[ext_resource type="Script" path="res://script/amigo.gd" id="1_3pkwo"]
-[ext_resource type="Texture2D" uid="uid://dl2y4v8l1g6dw" path="res://arte/laura-Sheet.png" id="1_ea8bh"]
+[ext_resource type="Script" uid="uid://c70nwqea0eafb" path="res://script/amigo.gd" id="1_3pkwo"]
+[ext_resource type="Texture2D" uid="uid://csvhdew6rs1xb" path="res://arte/laura ofc-Sheet.png" id="2_0ffpn"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bh08m"]
-atlas = ExtResource("1_ea8bh")
+[sub_resource type="AtlasTexture" id="AtlasTexture_417uy"]
+atlas = ExtResource("2_0ffpn")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7wyix"]
-atlas = ExtResource("1_ea8bh")
+[sub_resource type="AtlasTexture" id="AtlasTexture_23yxq"]
+atlas = ExtResource("2_0ffpn")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4jyam"]
-atlas = ExtResource("1_ea8bh")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s1i3o"]
-atlas = ExtResource("1_ea8bh")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g2w0k"]
-atlas = ExtResource("1_ea8bh")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xlg6y"]
-atlas = ExtResource("1_ea8bh")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jemfm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_00k5n"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bh08m")
+"texture": SubResource("AtlasTexture_417uy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7wyix")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4jyam")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s1i3o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g2w0k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xlg6y")
+"texture": SubResource("AtlasTexture_23yxq")
 }],
 "loop": true,
-"name": &"laura",
+"name": &"default",
 "speed": 2.0
 }]
 
@@ -64,10 +31,10 @@ size = Vector2(7.07815, 13.1563)
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_3pkwo")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_jemfm")
-animation = &"laura"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["amigo"]]
+position = Vector2(-0.65625, -2.10156)
+scale = Vector2(0.708984, 1.05615)
+sprite_frames = SubResource("SpriteFrames_00k5n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qfuad")

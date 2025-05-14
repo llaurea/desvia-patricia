@@ -1,9 +1,9 @@
 [gd_scene load_steps=27 format=3 uid="uid://hu5n2x3adux5"]
 
-[ext_resource type="Script" path="res://script/background.gd" id="1_1yl16"]
-[ext_resource type="Script" path="res://script/main.gd" id="1_onry3"]
+[ext_resource type="Script" uid="uid://dagyxlg100jdp" path="res://script/background.gd" id="1_1yl16"]
+[ext_resource type="Script" uid="uid://2pi8e8xircb1" path="res://script/main.gd" id="1_onry3"]
 [ext_resource type="Texture2D" uid="uid://bi3m6h3wkhqym" path="res://arte/fundo.png" id="2_66q8h"]
-[ext_resource type="Script" path="res://script/character_body_2d.gd" id="3_bbr5x"]
+[ext_resource type="Script" uid="uid://mti2mgxbvkat" path="res://script/character_body_2d.gd" id="3_bbr5x"]
 [ext_resource type="Texture2D" uid="uid://d2mwv5vp0b0wa" path="res://arte/patricia-Sheet.png" id="4_j78tp"]
 [ext_resource type="PackedScene" uid="uid://c6r3d0lc2lua2" path="res://inimigosazul.tscn" id="6_2586e"]
 [ext_resource type="PackedScene" uid="uid://dno1xe1afrq67" path="res://ana.tscn" id="6_h8t4q"]
@@ -124,7 +124,7 @@ shape = SubResource("RectangleShape2D_eg4y3")
 [node name="StaticBody2D" type="StaticBody2D" parent="background"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/StaticBody2D"]
-position = Vector2(-75.5, 2)
+position = Vector2(-58, 1)
 shape = SubResource("RectangleShape2D_vp4ix")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="background"]
@@ -170,6 +170,7 @@ position = Vector2(82, 58)
 position = Vector2(107, 2)
 
 [node name="Control" type="Control" parent="."]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_left = -45.0
@@ -178,21 +179,23 @@ offset_right = -5.0
 offset_bottom = -17.0
 
 [node name="restart" type="Button" parent="Control"]
+process_mode = 3
 layout_mode = 0
-offset_left = 28.0
-offset_top = 5.0
-offset_right = 89.0
-offset_bottom = 28.0
+offset_left = 27.0
+offset_top = 9.0
+offset_right = 88.0
+offset_bottom = 32.0
 icon = ExtResource("10_orrvd")
 flat = true
 icon_alignment = 1
 
 [node name="quit" type="Button" parent="Control"]
+process_mode = 3
 layout_mode = 0
-offset_left = 28.0
-offset_top = 28.0
-offset_right = 89.0
-offset_bottom = 51.0
+offset_left = 27.0
+offset_top = 29.0
+offset_right = 88.0
+offset_bottom = 52.0
 icon = ExtResource("11_dkvo3")
 flat = true
 icon_alignment = 1

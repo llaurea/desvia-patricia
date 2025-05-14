@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://jr0s24k83dpr"]
 
-[ext_resource type="Script" path="res://script/inimigos.gd" id="1_rajny"]
+[ext_resource type="Script" uid="uid://bljrw7jw15ydq" path="res://script/inimigos.gd" id="1_rajny"]
 [ext_resource type="Texture2D" uid="uid://bqnl0e4vgi7av" path="res://arte/carrocinza-Sheet.png" id="1_rrxwn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4j5p"]

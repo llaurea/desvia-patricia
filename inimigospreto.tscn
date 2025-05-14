@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://gb4myebhsbvi"]
 
-[ext_resource type="Script" path="res://script/inimigos.gd" id="1_hsf5q"]
+[ext_resource type="Script" uid="uid://bljrw7jw15ydq" path="res://script/inimigos.gd" id="1_hsf5q"]
 [ext_resource type="Texture2D" uid="uid://ddcgnq0t6sjda" path="res://arte/carropreto-Sheet.png" id="1_w568x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivhlx"]
