@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed =80 #quao rapido vai p direita e esquerda
 var lane_height =1 #altura das pistas MUDAR
 var vivo : bool = true
+var friends_collected := 0
 
 #fazer animacao da patricia funcionar
 func _ready():
@@ -31,3 +32,5 @@ func _physics_process(delta):
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	if area.is_in_group("enemies"):
 		vivo = false
+	if area.is_in_group("amigo"):
+		friends_collected += 1

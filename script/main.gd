@@ -25,6 +25,15 @@ func _ready():
 	spawn_enemy()
 	spawn_amigos_loop()
 	tela_morte.visible = false
+	await get_tree().create_timer(19.0).timeout
+	check_victory_or_loss()
+
+func check_victory_or_loss():
+	var player = get_node("player")
+	if player.friends_collected >= 3:
+		get_tree().change_scene_to_file("res://victory.tscn")
+	else:
+		get_tree().change_scene_to_file("res://loss.tscn")
 
 func spawn_amigos_loop():
 	var amigo_index = 0
