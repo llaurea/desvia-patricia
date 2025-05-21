@@ -6,6 +6,7 @@ extends Node2D
 @export var enemy4: PackedScene
 var spawn_interval : float = 1.0
 var spawn_interval_amigos : float = 5.0
+var player_dead = false
 @onready var spawn1 = $spawn1
 @onready var spawn2 = $spawn2
 @onready var spawn3 = $spawn3
@@ -13,6 +14,8 @@ var spawn_interval_amigos : float = 5.0
 @onready var enemy_scenes : Array = [enemy1, enemy2, enemy3, enemy4]
 @onready var spawns : Array = [spawn1, spawn2, spawn3]
 @onready var nodeenemies = $NodeEnemies
+
+@onready var friend_counter_label = $background/friendscounterlabe
 
 @export var ana: PackedScene
 @export var laura: PackedScene
@@ -25,8 +28,9 @@ func _ready():
 	spawn_enemy()
 	spawn_amigos_loop()
 	tela_morte.visible = false
-	await get_tree().create_timer(19.0).timeout
-	check_victory_or_loss()
+	await get_tree().create_timer(18.0).timeout
+	if not player_dead:
+		check_victory_or_loss()
 
 func check_victory_or_loss():
 	var player = get_node("player")
@@ -64,7 +68,8 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	if area.is_in_group("enemies"):
+	if area.is_in_group("enemies") and not player_dead:
+		player_dead = true
 		get_tree().paused = true
 		tela_morte.visible = true
 		

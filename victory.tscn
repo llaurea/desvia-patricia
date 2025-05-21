@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://sj71uwsabxeu"]
+[gd_scene load_steps=8 format=3 uid="uid://sj71uwsabxeu"]
 
 [ext_resource type="Script" uid="uid://cu5euhr10sqhh" path="res://victory.gd" id="1_v3ap6"]
-[ext_resource type="Texture2D" uid="uid://f2joltwi0hfn" path="res://arte/tela vitoria.png" id="2_15ee3"]
+[ext_resource type="Texture2D" uid="uid://wvjphs8e176v" path="res://arte/tela ganhou ofc.png" id="2_15ee3"]
 [ext_resource type="Texture2D" uid="uid://be65bsqwk8nl4" path="res://arte/botao menu.png" id="2_e8xaq"]
 [ext_resource type="Texture2D" uid="uid://ddkll7pgsm50d" path="res://arte/botao2.png" id="3_15ee3"]
 [ext_resource type="Texture2D" uid="uid://bubrn4vetdqd5" path="res://arte/ganhou.png" id="3_u1yty"]
+[ext_resource type="Texture2D" uid="uid://dj7x1ess1jcja" path="res://arte/texto 1.png" id="4_msd2c"]
 [ext_resource type="Texture2D" uid="uid://dpqcgemlqimly" path="res://arte/botao1.png" id="4_u1yty"]
 
 [node name="Control" type="Control"]
@@ -12,44 +13,50 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -7.0
-offset_bottom = -7.0
+offset_left = -9.0
+offset_top = -5.0
+offset_right = -9.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v3ap6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(64, 71)
+position = Vector2(73, 69)
 texture = ExtResource("2_15ee3")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(59, 64)
+position = Vector2(69, 52)
 texture = ExtResource("3_u1yty")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(74, 119)
+texture = ExtResource("4_msd2c")
 
 [node name="menu" type="Button" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 53.0
-offset_right = 93.0
-offset_bottom = 76.0
+offset_left = 44.0
+offset_top = 46.0
+offset_right = 105.0
+offset_bottom = 69.0
 icon = ExtResource("2_e8xaq")
 flat = true
 
 [node name="quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 91.0
-offset_right = 93.0
-offset_bottom = 114.0
+offset_left = 44.0
+offset_top = 84.0
+offset_right = 105.0
+offset_bottom = 107.0
 icon = ExtResource("3_15ee3")
 flat = true
 
 [node name="restart" type="Button" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 72.0
-offset_right = 93.0
-offset_bottom = 95.0
+offset_left = 44.0
+offset_top = 65.0
+offset_right = 105.0
+offset_bottom = 88.0
 icon = ExtResource("4_u1yty")
 flat = true
 

@@ -34,3 +34,5 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		vivo = false
 	if area.is_in_group("amigo"):
 		friends_collected += 1
+		var main = get_tree().get_current_scene()
+		main.friend_counter_label.text = str(friends_collected) + "/3 amigos!"

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://81q5qr6ytf35"]
+[gd_scene load_steps=8 format=3 uid="uid://81q5qr6ytf35"]
 
 [ext_resource type="Script" uid="uid://cmcfh4g6xgnrq" path="res://loss.gd" id="1_jnws2"]
 [ext_resource type="Texture2D" uid="uid://edsq0cn11nh5" path="res://arte/tela perdeu.png" id="2_trm4n"]
 [ext_resource type="Texture2D" uid="uid://be65bsqwk8nl4" path="res://arte/botao menu.png" id="3_4j3gv"]
 [ext_resource type="Texture2D" uid="uid://cekf3kfslcdpx" path="res://arte/perdeu.png" id="3_trm4n"]
+[ext_resource type="Texture2D" uid="uid://d2f1m162sfmwt" path="res://arte/texto 2.png" id="4_4j3gv"]
 [ext_resource type="Texture2D" uid="uid://ddkll7pgsm50d" path="res://arte/botao2.png" id="4_f3ipb"]
 [ext_resource type="Texture2D" uid="uid://dpqcgemlqimly" path="res://arte/botao1.png" id="5_hy7yk"]
 
@@ -21,32 +22,36 @@ position = Vector2(64, 64)
 texture = ExtResource("2_trm4n")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(70, 62)
+position = Vector2(67, 62)
 texture = ExtResource("3_trm4n")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(64, 111)
+texture = ExtResource("4_4j3gv")
 
 [node name="menu" type="Button" parent="."]
 layout_mode = 0
-offset_left = 35.0
+offset_left = 33.0
 offset_top = 36.0
-offset_right = 96.0
+offset_right = 94.0
 offset_bottom = 59.0
 icon = ExtResource("3_4j3gv")
 flat = true
 
 [node name="quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 36.0
+offset_left = 34.0
 offset_top = 74.0
-offset_right = 97.0
+offset_right = 95.0
 offset_bottom = 97.0
 icon = ExtResource("4_f3ipb")
 flat = true
 
 [node name="restart" type="Button" parent="."]
 layout_mode = 0
-offset_left = 35.0
+offset_left = 33.0
 offset_top = 55.0
-offset_right = 96.0
+offset_right = 94.0
 offset_bottom = 78.0
 icon = ExtResource("5_hy7yk")
 flat = true
